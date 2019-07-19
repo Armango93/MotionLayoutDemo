@@ -18,17 +18,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        content_container.layoutManager = LinearLayoutManager(this)
-        content_container.adapter = CustomAdapter(addStrings(), this)
-    }
-
-    fun addStrings(): ArrayList<String> {
-        val params = ViewGroup.LayoutParams(MATCH_PARENT, 80)
-        val list: ArrayList<String> = arrayListOf()
         for (i in 0 until 20){
-            list.add("Text for text №$i")
+            linearVertical.addView(TextElement(this).apply{
+                text = "Text for text №$i"
+            })
         }
-        return list
+
+
+//        content_container.layoutManager = LinearLayoutManager(this)
+//        content_container.adapter = CustomAdapter(addStrings(), this)
+//    }
+//
+//    fun addStrings(): ArrayList<String> {
+//        val params = ViewGroup.LayoutParams(MATCH_PARENT, 80)
+//        val list: ArrayList<String> = arrayListOf()
+//        for (i in 0 until 20){
+//            list.add("Text for text №$i")
+//        }
+//        return list
+//    }
+
     }
 }

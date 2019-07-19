@@ -41,22 +41,76 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
-        <androidx.core.widget.NestedScrollView
-                android:id="@+id/dial_pad"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:orientation="vertical"
-                android:background="@drawable/rect_rounded_top_corners"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent">
+    <com.example.myapplication.CustomMotionLayout
+            android:id="@+id/dialPad"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:background="@drawable/rect_rounded_top_corners"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/content_container"
+        <!--            <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/content_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>  -->
+
+        <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scrollView">
+
+            <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/linearVertical">
+
+                <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:id="@+id/linearHorizintal"
+                        android:weightSum="4">
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/hilight"
+                            android:layout_weight="1"/>
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/hilight"
+                            android:layout_weight="1"/>
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/hilight"
+                            android:layout_weight="1"/>
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/hilight"
+                            android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:src="@mipmap/hilight"/>
+
+            </LinearLayout>
+
 
         </androidx.core.widget.NestedScrollView>
+
+    </com.example.myapplication.CustomMotionLayout>
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
